@@ -90,16 +90,16 @@ function move(direction) {
     let moved = false;
 
     switch (direction) {
-        case 'up':
+        case 'down':
             moved = moveUp();
             break;
-        case 'down':
+        case 'up':
             moved = moveDown();
             break;
-        case 'left':
+        case 'right':
             moved = moveLeft();
             break;
-        case 'right':
+        case 'left':
             moved = moveRight();
             break;
     }
@@ -211,15 +211,15 @@ function handleSwipe() {
 
     if (Math.abs(deltaX) > Math.abs(deltaY)) {
         if (deltaX > 0) {
-            move('left');
-        } else {
             move('right');
+        } else {
+            move('left');
         }
     } else {
         if (deltaY > 0) {
-            move('up');
-        } else {
             move('down');
+        } else {
+            move('up');
         }
     }
 }
